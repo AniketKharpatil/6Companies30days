@@ -27,15 +27,15 @@ string encode(string src)
     int c=0;
     char curr=src[0];
     for(int i=0;i<src.length();i++){
-         if(src[i] != curr)
-        {
-            res += (curr + to_string(c));
-            curr = src[i];
-            c = 0;
+         if(src[i] ==src[i+1]){
+             c++;
+         }
+         else
+        {   c++;
+            res += (src[i] + to_string(c));
+            c=0;
         }
-        c++;
     }
-    res += (curr + to_string(c));
     return res;
 }    
  
